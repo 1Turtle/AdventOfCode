@@ -1,7 +1,7 @@
 # AdventOfCode
 **All my AdventOfCode solutions in one place!**
 
-[![Licence](https://img.shields.io/github/license/1Turtle/AdventOfCode?style=for-the-badge)](https://github.com/1Turtle/AdventOfCode/blob/main/LICENSE)
+[![Licence](https://img.shields.io/github/license/1Turtle/AdventOfCode?style=for-the-badge)](https://mit-license.org)
 [![Languages](https://img.shields.io/github/languages/count/1Turtle/AdventOfCode?style=for-the-badge)](https://github.com/1Turtle/AdventOfCode/search?l=C%2B%2B)
 [![Twitter](https://img.shields.io/twitter/follow/EinBaumeister?style=for-the-badge)](https://twitter.com/EinBaumeister)
 [![YouTube](https://img.shields.io/youtube/channel/subscribers/UC9WAHABIJ8KjKPDyJxDbEzA?label=YT%20SUBSCRIBERS&style=for-the-badge)](https://www.youtube.com/channel/UC9WAHABIJ8KjKPDyJxDbEzA)

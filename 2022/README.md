@@ -7,5 +7,5 @@ By Sammy.K aka. 1Turtle
 
 These are my solutions for the [Advent of Code 2022](https://adventofcode.com/2022). 🎄  
   
-Lua version: 5.4.4  
-Luarocks modules will be listed in the header of the main file (if even needed)  
+Lua version: ``5.4.4``  
+> 👉 Note: Luarocks modules will be listed in the header of the main file *(if even needed)*  

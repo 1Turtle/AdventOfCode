@@ -5,4 +5,7 @@ By Sammy.K aka. 1Turtle
 [![Language](https://img.shields.io/badge/Powered%20by-LUAROCKS-FFDA49?style=for-the-badge)](https://luarocks.org/)
 -
 
-These are my solutions for the [Advent of Code 2022](https://adventofcode.com/2022). 🎄
+These are my solutions for the [Advent of Code 2022](https://adventofcode.com/2022). 🎄  
+  
+Lua version: 5.4.4  
+Luarocks modules will be listed in the header of the main file (if even needed)  

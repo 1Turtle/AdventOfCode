@@ -1,4 +1,9 @@
-local input = io.open("./input.txt", "r")
+local input = io.open("./input.txt", 'r')
+
+if type(input) == "nil" then
+    error("Couldn't load file.")
+end
+
 
 local elfes = {0}
 local index = 1
@@ -14,6 +19,9 @@ while line do
     end
     line = input:read()
 end
+
+input:close()
+
 
 -- Make it useful
 table.sort(elfes)

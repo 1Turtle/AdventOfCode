@@ -4,6 +4,8 @@ if type(input) == "nil" then
     error("Couldn't load file.")
 end
 
+local nTimeBegin = os.clock()
+
 
 ---Converts a given compartment to a table with its content.
 ---@param compartment string Represented by its content, which is a char from a-z or A-Z.
@@ -78,8 +80,10 @@ for line in input:lines() do
     end
 end
 
+local nTimeEnd = os.clock()
 input:close()
 
 
 print("Sum of priorities: "..scoreP1)
 print("Sum of corresponding badges: "..scoreP2)
+print("Time: "..tostring((nTimeEnd-nTimeBegin)*1000000).."µs")

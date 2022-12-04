@@ -4,6 +4,8 @@ if type(input) == "nil" then
     error("Couldn't load file.")
 end
 
+local nTimeBegin = os.clock()
+
 
 local elfes = {0}
 local index = 1
@@ -34,4 +36,7 @@ for j=0,2 do
     print((j+1)..". "..elfes[i])
 end
 
+local nTimeEnd = os.clock()
+
 print("Total: "..total)
+print("Time: "..tostring((nTimeEnd-nTimeBegin)*1000000).."µs")

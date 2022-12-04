@@ -4,6 +4,8 @@ if type(input) == "nil" then
     error("Couldn't load file.")
 end
 
+local nTimeBegin = os.clock()
+
 
 -- Points for round results
 local rules = {
@@ -84,8 +86,10 @@ for line in input:lines() do
     scoreP2 = scoreP2 + getHand(players[1], players[2])
 end
 
+local nTimeEnd = os.clock()
 input:close()
 
 
 print("Your score would be: "..scoreP1)
 print("... Oh no wait, actually I read the plan wrong,\nwhich is why your REAL score is: "..scoreP2)
+print("Time: "..tostring((nTimeEnd-nTimeBegin)*1000000).."µs")

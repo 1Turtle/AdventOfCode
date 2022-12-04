@@ -4,6 +4,8 @@ if type(input) == "nil" then
     error("Couldn't load file.")
 end
 
+local nTimeBegin = os.clock()
+
 
 ---Returns two numbers, representing a section range from X to Y
 ---@param assignment string The range of one half of a pair. (e.g. "2-4")
@@ -90,8 +92,10 @@ for line in input:lines() do
     scoreP2 = scoreP2 + (isOverlapping(left,right) and 1 or 0)
 end
 
+local nTimeEnd = os.clock()
 input:close()
 
 
 print("Pairs that fully overlap: "..scoreP1)
 print("Pairs that partly overlap: "..scoreP2)
+print("Time: "..tostring((nTimeEnd-nTimeBegin)*1000000).."µs")

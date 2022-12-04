@@ -44,9 +44,9 @@ end
 ---@return number priority The priority of the given item.
 local function getPoints(char)
     char = char:byte()
-    if char > 96 and char < 123 then -- a-z
+    if char > 96 and char < 123 then -- Range: a-z (67-122)
         return char-96
-    elseif char > 64 and char < 91 then
+    elseif char > 64 and char < 91 then -- Range: A-Z (65-92)
         return char-38
     end
 end
@@ -55,8 +55,7 @@ end
 local scoreP1,scoreP2 = 0,0
 local group = {}
 
-local line = input:read()
-while line do
+for line in input:lines() do
     --[[ Part 1 ]]
     local left,right = "",""  -- Compartments
 
@@ -77,8 +76,6 @@ while line do
 
         group = {}
     end
-
-    line = input:read()
 end
 
 input:close()

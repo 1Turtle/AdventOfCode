@@ -70,21 +70,18 @@ end
 local scoreP1,scoreP2 = 0,0
 
 -- Goes through each round and calculates the scores
-local line = input:read()
-while line do
+for line in input:lines() do
     local players = {"",""}
     
     -- Get each side
     local index = 1
-    for hand in (line):gmatch("[^ ]") do
+    for hand in line:gmatch("[^ ]") do
         players[index] = hand
         index = index+1
     end
     
     scoreP1 = scoreP1 + getScore(players[1], players[2])
     scoreP2 = scoreP2 + getHand(players[1], players[2])
-
-    line = input:read()
 end
 
 input:close()

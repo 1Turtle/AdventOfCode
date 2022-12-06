@@ -45,12 +45,15 @@ end
 ---@param char string The item.
 ---@return number priority The priority of the given item.
 local function getPoints(char)
-    char = char:byte()
-    if char > 96 and char < 123 then -- Range: a-z (67-122)
-        return char-96
-    elseif char > 64 and char < 91 then -- Range: A-Z (65-92)
-        return char-38
+    local byte = char:byte()
+
+    if byte > 96 and byte < 123 then -- Range: a-z (67-122)
+        return byte-96
+    elseif byte > 64 and byte < 91 then -- Range: A-Z (65-92)
+        return byte-38
     end
+    
+    error("Wat?")
 end
 
 
@@ -59,10 +62,8 @@ local group = {}
 
 for line in input:lines() do
     --[[ Part 1 ]]
-    local left,right = "",""  -- Compartments
-
-    left = getItems( line:sub(1,#line/2) )
-    right = getItems( line:sub(#line/2+1) )
+    local left = getItems( line:sub(1,#line/2) )
+    local right = getItems( line:sub(#line/2+1) )
 
     -- Get item that exists twice and convert to priority, for end result.
     local special = getSpecialItem(left, right)

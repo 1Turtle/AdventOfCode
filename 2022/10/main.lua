@@ -1,29 +1,27 @@
-local input = io.open("./input.txt", 'r')
+package.path = package.path .. ";../?.lua"
+local aoc = require("aoc")
 
-if type(input) == "nil" then
-    error("Couldn't load file.")
-end
+aoc.result = {0, {}}
+aoc.startTimer(0)
 
-
-local scoreP1,scoreP2 = 0,{}
 local xReg,cycle = 1,0
 local function doCycle()
     -- Part 2
     local xPos = cycle%40
     if xPos >= xReg-1 and xPos <= xReg+1 then
-        scoreP2[cycle] = true
+        aoc.result[2][cycle] = true
     end
     cycle = cycle+1
     -- Part 1
     local check = (cycle-20)/40
     if math.floor(check) == check then
-        scoreP1 = scoreP1+cycle*xReg
+        aoc.result[1] = aoc.result[1]+cycle*xReg
     end
 end
 
 
-local nTimeBegin = os.clock()
-for line in input:lines() do
+aoc.startTimer(1,2)
+for line in aoc.input:lines() do
     if line:sub(1,4) == "noop" then
         doCycle()
     elseif line:sub(1,4) == "addx" then
@@ -36,21 +34,21 @@ for line in input:lines() do
     end
 end
 
-local nTimeEnd = os.clock()
-input:close()
-
-
-print("Total signal strength: "..scoreP1)
-print("Received image: ")
+aoc.stopTimer(1)
 
 local width,height = 40,6
-local line = ""
+local line,final = "",{}
 for i=0,width*height do
-    line = line..(scoreP2[i] and '#' or '.')
+    line = line..(aoc.result[2][i] and '#' or '.')
     if #line >= width then
-        print(line)
+        final[#final+1] = line
         line = ""
     end
 end
 
-print("Time: "..tostring((nTimeEnd-nTimeBegin)*1000000).."µs")
+aoc.stopTimer(2)
+aoc.result[2] = final
+aoc.result[2]._FLAG = aoc.FLAG.BITMAP
+aoc.stopTimer(0)
+
+aoc.getResults()

@@ -6,7 +6,7 @@ abstract class TestDay {
     abstract val day: Day
 
     abstract val testPuzzle1: List<String>
-    abstract val testPuzzle2: List<String>
+    abstract val testPuzzle2: List<String>?
 
     abstract val part1: Int
     abstract val part2: Int
@@ -18,6 +18,6 @@ abstract class TestDay {
 
     @Test
     fun testPart2() {
-        assertEquals(part2, day.part2(testPuzzle2))
+        assertEquals(part2, day.part2(testPuzzle2 ?: testPuzzle1))
     }
 }

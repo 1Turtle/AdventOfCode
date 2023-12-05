@@ -1,5 +1,8 @@
+package sammyk.aoc2023
+
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import sammyk.aoc2023.days.Day
 
 abstract class TestDay {
 

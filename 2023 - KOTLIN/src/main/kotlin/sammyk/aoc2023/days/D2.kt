@@ -1,6 +1,5 @@
-package days
+package sammyk.aoc2023.days
 
-import Day
 import java.lang.IllegalArgumentException
 
 fun main() {

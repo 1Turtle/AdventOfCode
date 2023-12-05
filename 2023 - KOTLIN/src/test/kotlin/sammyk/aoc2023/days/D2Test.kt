@@ -1,6 +1,6 @@
-package days
+package sammyk.aoc2023.days
 
-import TestDay
+import sammyk.aoc2023.TestDay
 
 class D2Test : TestDay() {
 

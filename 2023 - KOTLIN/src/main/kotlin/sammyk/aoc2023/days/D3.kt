@@ -1,6 +1,4 @@
-package days
-
-import Day
+package sammyk.aoc2023.days
 
 fun main() {
     D3().solve()

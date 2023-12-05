@@ -1,7 +1,8 @@
-import kotlin.system.measureNanoTime
-import kotlin.time.Duration.Companion.nanoseconds
+package sammyk.aoc2023.days
 
-abstract class Day(private val index: Int) {
+import kotlin.time.measureTimedValue
+
+sealed class Day(private val index: Int) {
 
     fun solve(): Pair<Int?, Int?>  {
         println("Solving puzzle for day $index.")
@@ -12,11 +13,8 @@ abstract class Day(private val index: Int) {
             ?.use { it.readLines() }
             ?: throw IllegalArgumentException("File '$index.txt' not found")
 
-        val solution1: Int?
-        val solution2: Int?
-
-        val elapsed1 = measureNanoTime { solution1 = part1(puzzle) }.nanoseconds
-        val elapsed2 = measureNanoTime { solution2 = part2(puzzle) }.nanoseconds
+        val (solution1, elapsed1) = measureTimedValue { part1(puzzle) }
+        val (solution2, elapsed2) = measureTimedValue { part2(puzzle) }
 
         println("""
                 |Found solutions, took ${elapsed1 + elapsed2}:

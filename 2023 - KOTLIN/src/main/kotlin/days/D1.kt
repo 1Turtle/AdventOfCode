@@ -38,7 +38,7 @@ class D1 : Day(1) {
         for ((leftW, leftN) in lexicon)
             for ((rightW, rightN) in lexicon)
                 if (leftW[leftW.length-1] == rightW[0])
-                    combinations[(leftW + rightW.subSequence(1, rightW.length))] = (leftN + rightN)
+                    combinations[(leftW + rightW.subSequence(1..rightW.length))] = (leftN + rightN)
 
         for (line in puzzle) {
             var cleared = line

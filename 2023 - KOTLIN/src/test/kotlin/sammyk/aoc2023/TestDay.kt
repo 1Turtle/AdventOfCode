@@ -11,8 +11,8 @@ abstract class TestDay {
     abstract val testPuzzle1: List<String>
     abstract val testPuzzle2: List<String>?
 
-    abstract val part1: Int
-    abstract val part2: Int?
+    abstract val part1: Number
+    abstract val part2: Number?
 
     @Test
     fun testPart1() {

@@ -2,9 +2,9 @@ package sammyk.aoc2023.days
 
 import kotlin.time.measureTimedValue
 
-sealed class Day(private val index: Int) {
+sealed class Day(private val index: Short) {
 
-    fun solve(): Pair<Int?, Int?>  {
+    fun solve(): Pair<Number?, Number?>  {
         println("Solving puzzle for day $index.")
 
         val classLoader: ClassLoader = Thread.currentThread().contextClassLoader
@@ -25,7 +25,7 @@ sealed class Day(private val index: Int) {
         return Pair(solution1, solution2)
     }
 
-    abstract fun part1(puzzle: List<String>): Int?
+    abstract fun part1(puzzle: List<String>): Number?
 
-    abstract fun part2(puzzle: List<String>): Int?
+    abstract fun part2(puzzle: List<String>): Number?
 }
